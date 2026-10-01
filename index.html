@@ -492,7 +492,77 @@
       }
 
     }
+/* NUEVO DISEÑO - OTRAS SESIONES */
 
+.sessions-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.sessions-section .section-label {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sessions-section h2 {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.sessions-grid {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 40px !important;
+  align-items: start;
+}
+
+.sessions-grid .session-item {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sessions-grid .session-item h3 {
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.sessions-grid .session-item p {
+  text-align: center;
+  margin: 0 0 18px;
+}
+
+.sessions-grid .session-item iframe {
+  display: block;
+  width: 100% !important;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .sessions-section {
+    padding: 60px 16px;
+  }
+
+  .sessions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+}
   </style>
 </head>
 
@@ -701,11 +771,11 @@
      MÁS SESIONES
 ========================= -->
 
-<section>
+<section class="sessions-section">
 
-  <p class="section-label">
+  <div class="section-label">
     MÁS MÚSICA
-  </p>
+  </div>
 
   <h2>
     Otras sesiones.
@@ -713,78 +783,86 @@
 
   <div class="sessions-grid">
 
-    <div class="session-item">
+    <!-- REGGAETÓN -->
+    <article class="session-item">
 
-<div class="session-item">
+      <h3>Reggaetón</h3>
 
-  <h3>
-<!-- REGGAETÓN -->
-<div class="session-item">
-  <h3>Reggaetón</h3>
-  <p>
-    Clásicos y sonidos urbanos.
-  </p>
+      <p>
+        Clásicos y sonidos urbanos.
+      </p>
 
-  <iframe
-    src="https://www.youtube.com/embed/tkbM0hCXBDg?si=oZVBIdx9XSS14TFA"
-    title="Frank López Reggaetón Session"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
-</div>
+      <iframe
+        src="https://www.youtube.com/embed/tkbM0hCXBDg?si=oZVBIdx9XSS14TFA"
+        title="Frank López Reggaetón Session"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+    </article>
 
     
-<!-- REGGAETÓN CLÁSICO -->
-<div class="session-item">
-  <h3>Reggaetón Clásico</h3>
-  <p>
-    Clásicos que nunca mueren · Archivos del Reggaetón.
-  </p>
+    <!-- REGGAETÓN CLÁSICO -->
+    <article class="session-item">
 
-  <iframe
-    src="https://www.youtube.com/embed/oabdcevmtuY?si=1qD9szbkXcn1CtB8"
-    title="Frank López - Reggaetón Clásico"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
-</div>
+      <h3>Reggaetón Clásico</h3>
 
+      <p>
+        Clásicos que nunca mueren · Archivos del Reggaetón.
+      </p>
 
-<!-- REGGAETÓN ROMÁNTICO -->
-<div class="session-item">
-  <h3>Reggaetón Romántico</h3>
-  <p>
-    Los clásicos del reggaetón más romántico · Archivos del Reggaetón.
-  </p>
+      <iframe
+        src="https://www.youtube.com/embed/oabdcevmtuY?si=1qD9szbkXcn1CtB8"
+        title="Frank López - Reggaetón Clásico"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
 
-  <iframe
-    src="https://www.youtube.com/embed/2pAj6W7_BXI?si=_ihu51dCY39lpukT"
-    title="Frank López - Reggaetón Romántico"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
-</div>
+    </article>
 
 
-<!-- AFROHOUSE -->
-<div class="session-item">
-  <h3>Afrohouse</h3>
-  <p>
-    Otra faceta musical de Frank.
-  </p>
+    <!-- REGGAETÓN ROMÁNTICO -->
+    <article class="session-item">
 
-  <iframe
-    src="https://www.youtube.com/embed/IvUU-378bTc"
-    title="Frank López Afrohouse Session"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
-</div>
-    
+      <h3>Reggaetón Romántico</h3>
+
+      <p>
+        Los clásicos del reggaetón más romántico · Archivos del Reggaetón.
+      </p>
+
+      <iframe
+        src="https://www.youtube.com/embed/2pAj6W7_BXI?si=_ihu51dCY39lpukT"
+        title="Frank López - Reggaetón Romántico"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+    </article>
+
+
+    <!-- AFROHOUSE -->
+    <article class="session-item">
+
+      <h3>Afrohouse</h3>
+
+      <p>
+        Otra faceta musical de Frank.
+      </p>
+
+      <iframe
+        src="https://www.youtube.com/embed/IvUU-378bTc"
+        title="Frank López Afrohouse Session"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+    </article>
+  </div>
+
 </section>
 
 

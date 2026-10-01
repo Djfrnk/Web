@@ -2,73 +2,922 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Frank Lopez DJ</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frank López | DJ Madrid</title>
+
+  <meta name="description" content="Frank López, DJ en Madrid. Reggaetón, urbano, música latina y hits comerciales para clubs, eventos privados y celebraciones.">
+
+  <meta property="og:title" content="Frank López | DJ Madrid">
+  <meta property="og:description" content="DJ · Madrid · Urban / Comercial">
+  <meta property="og:image" content="hero.jpg">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
+    :root {
+      --black: #080808;
+      --dark: #101010;
+      --white: #f5f3ef;
+      --gray: #a6a6a6;
+      --red: #7a1830;
+      --border: rgba(255,255,255,0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: black;
-      color: white;
+      background: var(--black);
+      color: var(--white);
       text-align: center;
+      line-height: 1.6;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 90px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
     }
 
     h2 {
-      margin-bottom: 30px;
-      font-weight: 600;
+      margin-bottom: 35px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
 
-    /* HERO */
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       background: url('hero.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      padding: 40px 20px;
     }
 
     .overlay {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.75);
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.55),
+          rgba(0,0,0,0.88)
+        );
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 700px;
-      padding: 0 20px;
+      max-width: 760px;
+      padding: 20px;
     }
 
     .logo {
-      width: 280px;
-      max-width: 80%;
-      margin-bottom: 20px;
+      width: 300px;
+      max-width: 82%;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 18px;
     }
 
     .main-text {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.45;
+      max-width: 680px;
+      margin: 0 auto;
     }
 
     .sub-text {
-      margin-top: 15px;
+      margin: 18px auto 0;
       font-size: 14px;
-      opacity: 0.7;
+      color: var(--gray);
+      max-width: 600px;
     }
 
-    .urgency {
-      margin-top: 15px;
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 30px;
+      background: var(--white);
+      color: #080808;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 5px;
       font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.45);
+    }
+
+    .button-red {
+      background: var(--red);
+      color: white;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      background: var(--black);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--red);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .intro-text {
+      max-width: 720px;
+      margin: auto;
+      color: #d0d0d0;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       SESSION FEATURED
+    ========================= */
+
+    .featured-session {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .session-card {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .session-title {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .session-description {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 850px;
+      height: 470px;
+      border: 0;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .about-photo {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 8px;
+      margin: 20px auto 30px;
+      display: block;
+    }
+
+    .about-text {
+      color: #d0d0d0;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin: 35px 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      color: var(--white);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 5px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery-section {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    /* =========================
+       MORE SESSIONS
+    ========================= */
+
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .session-item {
+      background: #111;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .session-item h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .session-item p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .session-item iframe {
+      height: 260px;
+      margin: 0;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .service {
+      padding: 30px 20px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .service h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      font-size: 13px;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    /* =========================
+       PRESS KIT
+    ========================= */
+
+    .presskit {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .presskit p {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       INSTAGRAM
+    ========================= */
+
+    .instagram {
+      background: var(--black);
+    }
+
+    .instagram p {
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.80),
+          rgba(0,0,0,0.92)
+        ),
+        url('hero.jpg') center/cover no-repeat;
+    }
+
+    .contact h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 20px;
+      background: #050505;
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      section {
+        padding: 70px 18px;
+      }
+
+      .hero {
+        min-height: 92vh;
+      }
+
+      .logo {
+        width: 250px;
+      }
+
+      .main-text {
+        font-size: 19px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      iframe {
+        height: 230px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .sessions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        gap: 30px;
+      }
+
+      .session-item iframe {
+        height: 220px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      DJ · MADRID · URBAN / COMERCIAL
+    </p>
+
+    <img src="logo.jpg" class="logo" alt="Frank López DJ">
+
+    <p class="main-text">
+      Música para cantar, bailar y recordar.
+    </p>
+
+    <p class="sub-text">
+      Reggaetón, urbano, música latina y hits comerciales adaptados a cada público.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a class="button"
+         href="#sesion">
+        ESCUCHAR SESIÓN
+      </a>
+
+      <a class="button button-red"
+         href="https://api.whatsapp.com/send?phone=34680688077&text=Hola%20Frank%2C%20me%20gustaría%20consultar%20tu%20disponibilidad%20para%20un%20evento."
+         target="_blank">
+        CONTACTAR
+      </a>
+
+    </div>
+
+    <p class="sub-text">
+      Clubs · Eventos privados · Celebraciones · Festivales
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+  <p class="section-label">
+    FRANK LÓPEZ
+  </p>
+
+  <h2>
+    Música, público y momento.
+  </h2>
+
+  <p class="intro-text">
+    Más de 12 años detrás de una cabina, adaptando cada sesión al público
+    y al momento de la noche. Una propuesta basada en música urbana,
+    reggaetón, clásicos y hits comerciales.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     SESIÓN DESTACADA
+========================= -->
+
+<section class="featured-session" id="sesion">
+
+  <p class="section-label">
+    SESIÓN DESTACADA
+  </p>
+
+  <h2>
+    La nueva etapa empieza aquí.
+  </h2>
+
+  <div class="session-card">
+
+    <!--
+      CUANDO TENGAMOS LA NUEVA SESIÓN,
+      SUSTITUIMOS ESTE VIDEO POR EL NUEVO ID DE YOUTUBE.
+    -->
+
+    <iframe
+      src="https://www.youtube.com/embed/tkbM0hCXBDg"
+      title="Frank López DJ Session"
+      allowfullscreen>
+    </iframe>
+
+    <p class="session-title">
+      Frank López · DJ Session
+    </p>
+
+    <p class="session-description">
+      Urban · Comercial · Latino · Reggaetón
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SOBRE FRANK
+========================= -->
+
+<section>
+
+  <div class="about-content">
+
+    <p class="section-label">
+      SOBRE FRANK
+    </p>
+
+    <h2>
+      Más que poner música.
+    </h2>
+
+    <img
+      src="frank-lopez.jpg"
+      class="about-photo"
+      alt="Frank López DJ">
+
+    <p class="about-text">
+      Frank López es DJ y artista residente en Madrid.
+      Su propuesta combina música urbana, reggaetón, clásicos,
+      música latina y hits comerciales, adaptando la selección
+      musical al público y a la energía de cada evento.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong>+12</strong>
+        <span>Años en cabina</span>
+      </div>
+
+      <div class="stat">
+        <strong>4</strong>
+        <span>Países</span>
+      </div>
+
+      <div class="stat">
+        <strong>MAD</strong>
+        <span>Base actual</span>
+      </div>
+
+    </div>
+
+    <a
+      class="button button-outline"
+      href="presskit-frank.pdf"
+      target="_blank">
+      VER PRESS KIT
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EN LA PISTA
+========================= -->
+
+<section class="gallery-section">
+
+  <p class="section-label">
+    EN LA PISTA
+  </p>
+
+  <h2>
+    Algunas noches.
+  </h2>
+
+  <div class="gallery">
+
+    <img src="foto1.jpg" alt="Frank López DJ">
+    <img src="foto2.jpg" alt="Frank López DJ">
+    <img src="foto3.jpg" alt="Frank López DJ">
+    <img src="foto4.jpg" alt="Frank López DJ">
+    <img src="foto5.jpg" alt="Frank López DJ">
+    <img src="foto6.jpg" alt="Frank López DJ">
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MÁS SESIONES
+========================= -->
+
+<section>
+
+  <p class="section-label">
+    MÁS MÚSICA
+  </p>
+
+  <h2>
+    Otras sesiones.
+  </h2>
+
+  <div class="sessions-grid">
+
+    <div class="session-item">
+
+      <h3>
+        Reggaetón
+      </h3>
+
+      <p>
+        Clásicos y sonidos urbanos.
+      </p>
+
+      <iframe
+        src="https://www.youtube.com/embed/IvUU-378bTc"
+        title="Frank López Reggaetón Session"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+
+    <div class="session-item">
+
+      <h3>
+        Afrohouse
+      </h3>
+
+      <p>
+        Otra faceta musical de Frank.
+      </p>
+
+      <!--
+        AQUÍ PUEDES PONER MÁS ADELANTE
+        TU SESIÓN DE AFROHOUSE.
+      -->
+
+      <a
+        class="button button-outline"
+        href="https://www.youtube.com/@Djfrnk"
+        target="_blank">
+        VER EN YOUTUBE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<section class="services">
+
+  <p class="section-label">
+    FORMATOS
+  </p>
+
+  <h2>
+    Donde puede sonar Frank.
+  </h2>
+
+  <div class="services-grid">
+
+    <div class="service">
+
+      <h3>
+        CLUBS
+      </h3>
+
+      <p>
+        Sesiones urbanas, comerciales y open format adaptadas al público.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <h3>
+        EVENTOS PRIVADOS
+      </h3>
+
+      <p>
+        Cumpleaños, celebraciones y fiestas donde la música forma parte del momento.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <h3>
+        EVENTOS
+      </h3>
+
+      <p>
+        Propuestas musicales adaptadas al formato, público y duración del evento.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PRESS KIT
+========================= -->
+
+<section class="presskit">
+
+  <p class="section-label">
+    MATERIAL PROFESIONAL
+  </p>
+
+  <h2>
+    Press Kit
+  </h2>
+
+  <p>
+    Información, fotografías y material profesional de Frank López.
+  </p>
+
+  <a
+    class="button"
+    href="presskit-frank.pdf"
+    target="_blank">
+    ABRIR PRESS KIT
+  </a>
+
+</section>
+
+
+<!-- =========================
+     INSTAGRAM
+========================= -->
+
+<section class="instagram">
+
+  <p class="section-label">
+    INSTAGRAM
+  </p>
+
+  <h2>
+    Sigue la nueva etapa.
+  </h2>
+
+  <p>
+    Música, sesiones, historias y momentos detrás de la cabina.
+  </p>
+
+  <a
+    class="button button-outline"
+    href="https://instagram.com/Djfrnk"
+    target="_blank">
+    @DJFRNK
+  </a>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="contact">
+
+  <p class="section-label">
+    BOOKING
+  </p>
+
+  <h2>
+    ¿Tienes una fecha?
+  </h2>
+
+  <p>
+    Clubs, eventos privados, celebraciones y otros formatos.
+    Cuéntame qué estás preparando.
+  </p>
+
+  <a
+    class="button button-red"
+    href="https://api.whatsapp.com/send?phone=34680688077&text=Hola%20Frank%2C%20me%20gustaría%20consultar%20tu%20disponibilidad%20para%20un%20evento."
+    target="_blank">
+    CONTACTAR POR WHATSAPP
+  </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  © 2026 Frank López · DJ Madrid
+
+</footer>
+
+
+</body>
+</html>      font-size: 14px;
       font-weight: 700;
       color: #ff4d4d;
     }

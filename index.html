@@ -256,18 +256,11 @@
       margin: 0 auto;
     }
 
-    /*
-      La miniatura utiliza directamente el PDF.
-      El iframe está dentro de un contenedor recortado
-      para mostrar únicamente la portada del flyer.
-    */
-
     .event-flyer {
       position: relative;
       display: block;
       width: 100%;
       max-width: 430px;
-      height: 610px;
       margin: 0 auto 28px;
       padding: 0;
       border: 0;
@@ -276,7 +269,9 @@
       background: #050505;
       cursor: pointer;
       box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
     }
 
     .event-flyer:hover {
@@ -284,22 +279,12 @@
       box-shadow: 0 22px 60px rgba(0,0,0,0.50);
     }
 
-    .event-flyer iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .event-flyer img {
+      display: block;
       width: 100%;
-      height: 100%;
-      margin: 0;
-      border: 0;
-      border-radius: 0;
-      pointer-events: none;
+      height: auto;
+      border-radius: 8px;
     }
-
-    /*
-      Capa sutil para que el usuario entienda
-      que el flyer es interactivo.
-    */
 
     .event-flyer-overlay {
       position: absolute;
@@ -309,12 +294,14 @@
       align-items: flex-end;
       justify-content: center;
       padding: 22px;
+
       background:
         linear-gradient(
           to bottom,
           rgba(0,0,0,0) 60%,
           rgba(0,0,0,0.55)
         );
+
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -390,10 +377,13 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
+
       display: none;
       align-items: center;
       justify-content: center;
+
       padding: 25px;
+
       background: rgba(0,0,0,0.94);
     }
 
@@ -403,38 +393,54 @@
 
     .flyer-modal-content {
       position: relative;
-      width: min(92vw, 700px);
-      height: 92vh;
+
+      width: min(92vw, 600px);
+      max-height: 92vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .flyer-modal iframe {
-      width: 100%;
-      height: 100%;
-      max-height: 92vh;
-      margin: 0;
-      border: 0;
+    .flyer-modal-image {
+      display: block;
+
+      max-width: 100%;
+      max-height: 90vh;
+
+      width: auto;
+      height: auto;
+
       border-radius: 8px;
-      background: #111;
+
+      box-shadow:
+        0 20px 80px rgba(0,0,0,0.6);
     }
 
     .flyer-modal-close {
       position: absolute;
+
       top: -45px;
       right: 0;
+
       z-index: 2;
+
       width: 36px;
       height: 36px;
+
       border: 1px solid rgba(255,255,255,0.30);
       border-radius: 50%;
+
       background: rgba(0,0,0,0.65);
+
       color: white;
+
       font-family: inherit;
       font-size: 23px;
       line-height: 1;
+
       cursor: pointer;
+
       transition: all 0.25s ease;
     }
 
@@ -751,14 +757,10 @@
       }
 
 
-      /* PRÓXIMAS FECHAS - MOBILE */
+      /* PRÓXIMAS FECHAS */
 
       .event-card {
         max-width: 340px;
-      }
-
-      .event-flyer {
-        height: 485px;
       }
 
       .event-title {
@@ -774,24 +776,24 @@
       }
 
 
-      /* MODAL - MOBILE */
+      /* MODAL */
 
       .flyer-modal {
-        padding: 12px;
+        padding: 15px;
       }
 
       .flyer-modal-content {
-        width: 94vw;
-        height: 86vh;
+        width: 92vw;
+        max-height: 88vh;
       }
 
-      .flyer-modal iframe {
-        height: 86vh;
+      .flyer-modal-image {
+        max-width: 92vw;
+        max-height: 84vh;
       }
 
       .flyer-modal-close {
         top: -43px;
-        right: 0;
       }
 
     }
@@ -896,11 +898,6 @@
 
   <div class="session-card">
 
-    <!--
-      CUANDO TENGAMOS LA NUEVA SESIÓN,
-      SUSTITUIMOS ESTE VIDEO POR EL NUEVO ID DE YOUTUBE.
-    -->
-
     <iframe
       src="https://www.youtube.com/embed/tkbM0hCXBDg"
       title="Frank López DJ Session"
@@ -938,26 +935,33 @@
 
   <div class="event-card">
 
+
+    <!-- FLYER -->
+
     <button
       class="event-flyer"
       type="button"
       onclick="openFlyer()"
       aria-label="Ver flyer completo de Back to the Past">
 
-      <iframe
-        src="flyer-10-octubre.jpg#toolbar=0&navpanes=0&scrollbar=0"
-        title="Flyer Back to the Past · 10 de octubre"
-        loading="lazy">
-      </iframe>
+      <img
+        src="flyer-10-octubre.jpg"
+        alt="Flyer Back to the Past · 10 de octubre · Cadillac Discoteca"
+        loading="lazy"
+      >
 
       <div class="event-flyer-overlay">
+
         <span>
           VER FLYER
         </span>
+
       </div>
 
     </button>
 
+
+    <!-- INFORMACIÓN DEL EVENTO -->
 
     <p class="event-date">
       10 OCT
@@ -1415,10 +1419,11 @@
       ×
     </button>
 
-    <iframe
-      src="flyer-10-octubre.pdf#toolbar=0&navpanes=0&scrollbar=0"
-      title="Flyer Back to the Past · 10 de octubre">
-    </iframe>
+    <img
+      class="flyer-modal-image"
+      src="flyer-10-octubre.jpg"
+      alt="Flyer Back to the Past · 10 de octubre"
+    >
 
   </div>
 

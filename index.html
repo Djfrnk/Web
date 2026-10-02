@@ -2,19 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Frank López | DJ Madrid</title>
 
-  <meta name="description" content="Frank López, DJ en Madrid. Reggaetón, urbano, música latina y hits comerciales para clubs, eventos privados y celebraciones.">
+  <meta
+    name="description"
+    content="Frank López, DJ en Madrid. Reggaetón, urbano, música latina y hits comerciales para clubs, eventos privados y celebraciones."
+  >
 
   <meta property="og:title" content="Frank López | DJ Madrid">
-  <meta property="og:description" content="DJ · Madrid · Urban / Comercial">
+  <meta
+    property="og:description"
+    content="DJ · Madrid · Urban / Comercial"
+  >
   <meta property="og:image" content="hero.jpg">
   <meta property="og:type" content="website">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -67,6 +75,7 @@
     a {
       color: inherit;
     }
+
 
     /* =========================
        HERO
@@ -166,6 +175,7 @@
       color: white;
     }
 
+
     /* =========================
        INTRO
     ========================= */
@@ -190,6 +200,7 @@
       font-size: 16px;
       line-height: 1.8;
     }
+
 
     /* =========================
        SESSION FEATURED
@@ -226,6 +237,7 @@
       border-radius: 8px;
       margin: 15px 0;
     }
+
 
     /* =========================
        ABOUT
@@ -275,6 +287,7 @@
       color: var(--gray);
     }
 
+
     /* =========================
        GALLERY
     ========================= */
@@ -306,40 +319,70 @@
       transform: scale(1.02);
     }
 
+
     /* =========================
        MORE SESSIONS
     ========================= */
 
+    .sessions-section {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .sessions-section .section-label {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .sessions-section h2 {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
     .sessions-grid {
+      width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 40px;
+      align-items: start;
     }
 
     .session-item {
-      background: #111;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border: none;
+      background: transparent;
+      box-shadow: none;
     }
 
     .session-item h3 {
+      text-align: center;
+      margin: 0 0 8px;
       font-size: 16px;
-      margin-bottom: 5px;
     }
 
     .session-item p {
+      text-align: center;
+      margin: 0 0 18px;
       color: var(--gray);
       font-size: 12px;
-      margin-bottom: 15px;
     }
 
     .session-item iframe {
-      height: 260px;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      border: 0;
+      border-radius: 10px;
       margin: 0;
     }
+
 
     /* =========================
        SERVICES
@@ -377,6 +420,7 @@
       margin: 0;
     }
 
+
     /* =========================
        PRESS KIT
     ========================= */
@@ -392,6 +436,7 @@
       margin-bottom: 25px;
     }
 
+
     /* =========================
        INSTAGRAM
     ========================= */
@@ -404,6 +449,7 @@
       color: var(--gray);
       margin-bottom: 25px;
     }
+
 
     /* =========================
        CONTACT
@@ -428,6 +474,7 @@
       margin: 0 auto 30px;
     }
 
+
     /* =========================
        FOOTER
     ========================= */
@@ -440,11 +487,12 @@
       letter-spacing: 1px;
     }
 
+
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
 
       section {
         padding: 70px 18px;
@@ -475,8 +523,13 @@
         gap: 8px;
       }
 
+      .sessions-section {
+        padding: 60px 16px;
+      }
+
       .sessions-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
       .services-grid {
@@ -488,81 +541,12 @@
       }
 
       .session-item iframe {
-        height: 220px;
+        height: auto;
+        aspect-ratio: 16 / 9;
       }
 
     }
-/* NUEVO DISEÑO - OTRAS SESIONES */
 
-.sessions-section {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  box-sizing: border-box;
-}
-
-.sessions-section .section-label {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.sessions-section h2 {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.sessions-grid {
-  width: 100%;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 40px !important;
-  align-items: start;
-}
-
-.sessions-grid .session-item {
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 0;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box;
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.sessions-grid .session-item h3 {
-  text-align: center;
-  margin: 0 0 8px;
-}
-
-.sessions-grid .session-item p {
-  text-align: center;
-  margin: 0 0 18px;
-}
-
-.sessions-grid .session-item iframe {
-  display: block;
-  width: 100% !important;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  border: 0;
-  border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-
-  .sessions-section {
-    padding: 60px 16px;
-  }
-
-  .sessions-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-
-}
   </style>
 </head>
 
@@ -583,7 +567,11 @@
       DJ · MADRID · URBAN / COMERCIAL
     </p>
 
-    <img src="logo.png" class="logo" alt="Frank López DJ">
+    <img
+      src="logo.png"
+      class="logo"
+      alt="Frank López DJ"
+    >
 
     <p class="main-text">
       Música para cantar, bailar y recordar.
@@ -595,14 +583,16 @@
 
     <div class="hero-buttons">
 
-      <a class="button"
-         href="#sesion">
+      <a
+        class="button"
+        href="#sesion">
         ESCUCHAR SESIÓN
       </a>
 
-      <a class="button button-red"
-         href="https://api.whatsapp.com/send?phone=34680688077&text=Hola%20Frank%2C%20me%20gustaría%20consultar%20tu%20disponibilidad%20para%20un%20evento."
-         target="_blank">
+      <a
+        class="button button-red"
+        href="https://api.whatsapp.com/send?phone=34680688077&text=Hola%20Frank%2C%20me%20gustaría%20consultar%20tu%20disponibilidad%20para%20un%20evento."
+        target="_blank">
         CONTACTAR
       </a>
 
@@ -651,7 +641,7 @@
   </p>
 
   <h2>
-    La nueva etapa empieza aquí.
+    Escucha cómo suena Frank.
   </h2>
 
   <div class="session-card">
@@ -664,6 +654,8 @@
     <iframe
       src="https://www.youtube.com/embed/tkbM0hCXBDg"
       title="Frank López DJ Session"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen>
     </iframe>
 
@@ -699,13 +691,21 @@
     <img
       src="frank-lopez.jpg"
       class="about-photo"
-      alt="Frank López DJ">
+      alt="Frank López DJ"
+      loading="lazy"
+    >
 
     <p class="about-text">
-      Frank López es DJ y artista residente en Madrid.
-      Su propuesta combina música urbana, reggaetón, clásicos,
-      música latina y hits comerciales, adaptando la selección
-      musical al público y a la energía de cada evento.
+      Frank López es DJ y artista en Madrid. Después de más de 12 años
+      detrás de una cabina, su forma de trabajar parte de una idea sencilla:
+      no existe una sesión igual para todos los públicos.
+      <br><br>
+      Lee la pista, entiende la energía de la noche y adapta la selección
+      musical al momento. Reggaetón, urbano, clásicos, música latina y hits
+      comerciales se mezclan según quién está delante de la cabina.
+      <br><br>
+      El objetivo no es simplemente poner canciones, sino crear momentos
+      que la gente quiera cantar, bailar y recordar.
     </p>
 
     <div class="stats">
@@ -755,12 +755,41 @@
 
   <div class="gallery">
 
-    <img src="foto1.jpg" alt="Frank López DJ">
-    <img src="foto2.jpg" alt="Frank López DJ">
-    <img src="foto3.jpg" alt="Frank López DJ">
-    <img src="foto4.jpg" alt="Frank López DJ">
-    <img src="foto5.jpg" alt="Frank López DJ">
-    <img src="foto6.jpg" alt="Frank López DJ">
+    <img
+      src="foto1.jpg"
+      alt="Frank López DJ"
+      loading="lazy"
+    >
+
+    <img
+      src="foto2.jpg"
+      alt="Frank López DJ"
+      loading="lazy"
+    >
+
+    <img
+      src="foto3.jpg"
+      alt="Frank López DJ"
+      loading="lazy"
+    >
+
+    <img
+      src="foto4.jpg"
+      alt="Frank López DJ"
+      loading="lazy"
+    >
+
+    <img
+      src="foto5.jpg"
+      alt="Frank López DJ"
+      loading="lazy"
+    >
+
+    <img
+      src="foto6.jpg"
+      alt="Frank López DJ"
+      loading="lazy"
+    >
 
   </div>
 
@@ -783,10 +812,14 @@
 
   <div class="sessions-grid">
 
+
     <!-- REGGAETÓN -->
+
     <article class="session-item">
 
-      <h3>Reggaetón</h3>
+      <h3>
+        Reggaetón
+      </h3>
 
       <p>
         Clásicos y sonidos urbanos.
@@ -797,16 +830,20 @@
         title="Frank López Reggaetón Session"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
+        loading="lazy"
         allowfullscreen>
       </iframe>
 
     </article>
 
-    
+
     <!-- REGGAETÓN CLÁSICO -->
+
     <article class="session-item">
 
-      <h3>Reggaetón Clásico</h3>
+      <h3>
+        Reggaetón Clásico
+      </h3>
 
       <p>
         Clásicos que nunca mueren · Archivos del Reggaetón.
@@ -817,6 +854,7 @@
         title="Frank López - Reggaetón Clásico"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
+        loading="lazy"
         allowfullscreen>
       </iframe>
 
@@ -824,9 +862,12 @@
 
 
     <!-- REGGAETÓN ROMÁNTICO -->
+
     <article class="session-item">
 
-      <h3>Reggaetón Romántico</h3>
+      <h3>
+        Reggaetón Romántico
+      </h3>
 
       <p>
         Los clásicos del reggaetón más romántico · Archivos del Reggaetón.
@@ -837,6 +878,7 @@
         title="Frank López - Reggaetón Romántico"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
+        loading="lazy"
         allowfullscreen>
       </iframe>
 
@@ -844,9 +886,12 @@
 
 
     <!-- AFROHOUSE -->
+
     <article class="session-item">
 
-      <h3>Afrohouse</h3>
+      <h3>
+        Afrohouse
+      </h3>
 
       <p>
         Otra faceta musical de Frank.
@@ -857,10 +902,12 @@
         title="Frank López Afrohouse Session"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
+        loading="lazy"
         allowfullscreen>
       </iframe>
 
     </article>
+
   </div>
 
 </section>
@@ -881,6 +928,7 @@
   </h2>
 
   <div class="services-grid">
+
 
     <div class="service">
 
@@ -911,11 +959,11 @@
     <div class="service">
 
       <h3>
-        EVENTOS
+        CELEBRACIONES
       </h3>
 
       <p>
-        Propuestas musicales adaptadas al formato, público y duración del evento.
+        Música adaptada al tipo de celebración, al público y a la energía de cada momento.
       </p>
 
     </div>
@@ -964,7 +1012,7 @@
   </p>
 
   <h2>
-    Sigue la nueva etapa.
+    Sigue a Frank.
   </h2>
 
   <p>

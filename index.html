@@ -12,10 +12,12 @@
   >
 
   <meta property="og:title" content="Frank López | DJ Madrid">
+
   <meta
     property="og:description"
     content="DJ · Madrid · Urban / Comercial"
   >
+
   <meta property="og:image" content="hero.jpg">
   <meta property="og:type" content="website">
 
@@ -94,6 +96,7 @@
     .overlay {
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
           to bottom,
@@ -236,6 +239,208 @@
       border: 0;
       border-radius: 8px;
       margin: 15px 0;
+    }
+
+
+    /* =========================
+       PRÓXIMAS FECHAS
+    ========================= */
+
+    .events-section {
+      background: var(--black);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .event-card {
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    /*
+      La miniatura utiliza directamente el PDF.
+      El iframe está dentro de un contenedor recortado
+      para mostrar únicamente la portada del flyer.
+    */
+
+    .event-flyer {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 430px;
+      height: 610px;
+      margin: 0 auto 28px;
+      padding: 0;
+      border: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #050505;
+      cursor: pointer;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .event-flyer:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.50);
+    }
+
+    .event-flyer iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      pointer-events: none;
+    }
+
+    /*
+      Capa sutil para que el usuario entienda
+      que el flyer es interactivo.
+    */
+
+    .event-flyer-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 22px;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0) 60%,
+          rgba(0,0,0,0.55)
+        );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .event-flyer:hover .event-flyer-overlay {
+      opacity: 1;
+    }
+
+    .event-flyer-overlay span {
+      padding: 10px 18px;
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 4px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(5px);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .event-date {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+
+    .event-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .event-location {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .event-djs {
+      color: #d0d0d0;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .event-button {
+      display: inline-block;
+      padding: 13px 24px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 5px;
+      background: transparent;
+      color: var(--white);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .event-button:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+
+    /* =========================
+       FLYER MODAL
+    ========================= */
+
+    .flyer-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.94);
+    }
+
+    .flyer-modal.active {
+      display: flex;
+    }
+
+    .flyer-modal-content {
+      position: relative;
+      width: min(92vw, 700px);
+      height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flyer-modal iframe {
+      width: 100%;
+      height: 100%;
+      max-height: 92vh;
+      margin: 0;
+      border: 0;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    .flyer-modal-close {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.30);
+      border-radius: 50%;
+      background: rgba(0,0,0,0.65);
+      color: white;
+      font-family: inherit;
+      font-size: 23px;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .flyer-modal-close:hover {
+      background: white;
+      color: black;
     }
 
 
@@ -545,10 +750,55 @@
         aspect-ratio: 16 / 9;
       }
 
+
+      /* PRÓXIMAS FECHAS - MOBILE */
+
+      .event-card {
+        max-width: 340px;
+      }
+
+      .event-flyer {
+        height: 485px;
+      }
+
+      .event-title {
+        font-size: 21px;
+      }
+
+      .event-location {
+        font-size: 13px;
+      }
+
+      .event-djs {
+        font-size: 12px;
+      }
+
+
+      /* MODAL - MOBILE */
+
+      .flyer-modal {
+        padding: 12px;
+      }
+
+      .flyer-modal-content {
+        width: 94vw;
+        height: 86vh;
+      }
+
+      .flyer-modal iframe {
+        height: 86vh;
+      }
+
+      .flyer-modal-close {
+        top: -43px;
+        right: 0;
+      }
+
     }
 
   </style>
 </head>
+
 
 <body>
 
@@ -673,6 +923,71 @@
 
 
 <!-- =========================
+     PRÓXIMAS FECHAS
+========================= -->
+
+<section class="events-section">
+
+  <p class="section-label">
+    PRÓXIMAS FECHAS
+  </p>
+
+  <h2>
+    Donde puedes encontrar a Frank.
+  </h2>
+
+  <div class="event-card">
+
+    <button
+      class="event-flyer"
+      type="button"
+      onclick="openFlyer()"
+      aria-label="Ver flyer completo de Back to the Past">
+
+      <iframe
+        src="flyer-10-octubre.pdf#toolbar=0&navpanes=0&scrollbar=0"
+        title="Flyer Back to the Past · 10 de octubre"
+        loading="lazy">
+      </iframe>
+
+      <div class="event-flyer-overlay">
+        <span>
+          VER FLYER
+        </span>
+      </div>
+
+    </button>
+
+
+    <p class="event-date">
+      10 OCT
+    </p>
+
+    <h3 class="event-title">
+      BACK TO THE PAST
+    </h3>
+
+    <p class="event-location">
+      Cadillac Discoteca · Rivas-Vaciamadrid, Madrid
+    </p>
+
+    <p class="event-djs">
+      Frank Lopez · Lissandro Velasquez · Why Chris?
+    </p>
+
+    <button
+      class="event-button"
+      type="button"
+      onclick="openFlyer()">
+      VER FLYER
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
      SOBRE FRANK
 ========================= -->
 
@@ -696,17 +1011,24 @@
     >
 
     <p class="about-text">
+
       Frank López es DJ y artista en Madrid. Después de más de 12 años
       detrás de una cabina, su forma de trabajar parte de una idea sencilla:
       no existe una sesión igual para todos los públicos.
+
       <br><br>
+
       Lee la pista, entiende la energía de la noche y adapta la selección
       musical al momento. Reggaetón, urbano, clásicos, música latina y hits
       comerciales se mezclan según quién está delante de la cabina.
+
       <br><br>
+
       El objetivo no es simplemente poner canciones, sino crear momentos
       que la gente quiera cantar, bailar y recordar.
+
     </p>
+
 
     <div class="stats">
 
@@ -726,6 +1048,7 @@
       </div>
 
     </div>
+
 
     <a
       class="button button-outline"
@@ -908,6 +1231,7 @@
 
     </article>
 
+
   </div>
 
 </section>
@@ -967,6 +1291,7 @@
       </p>
 
     </div>
+
 
   </div>
 
@@ -1067,6 +1392,99 @@
   © 2026 Frank López · DJ Madrid
 
 </footer>
+
+
+<!-- =========================
+     FLYER MODAL
+========================= -->
+
+<div
+  id="flyerModal"
+  class="flyer-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Flyer del evento Back to the Past">
+
+  <div class="flyer-modal-content">
+
+    <button
+      class="flyer-modal-close"
+      type="button"
+      onclick="closeFlyer()"
+      aria-label="Cerrar flyer">
+      ×
+    </button>
+
+    <iframe
+      src="flyer-10-octubre.pdf#toolbar=0&navpanes=0&scrollbar=0"
+      title="Flyer Back to the Past · 10 de octubre">
+    </iframe>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     FLYER JAVASCRIPT
+========================= -->
+
+<script>
+
+  function openFlyer() {
+
+    const modal = document.getElementById('flyerModal');
+
+    modal.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+
+  }
+
+
+  function closeFlyer() {
+
+    const modal = document.getElementById('flyerModal');
+
+    modal.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+  }
+
+
+  /*
+    Cerrar haciendo clic fuera del flyer.
+  */
+
+  document
+    .getElementById('flyerModal')
+    .addEventListener('click', function(event) {
+
+      if (event.target === this) {
+
+        closeFlyer();
+
+      }
+
+    });
+
+
+  /*
+    Cerrar pulsando ESC.
+  */
+
+  document.addEventListener('keydown', function(event) {
+
+    if (event.key === 'Escape') {
+
+      closeFlyer();
+
+    }
+
+  });
+
+</script>
 
 
 </body>
